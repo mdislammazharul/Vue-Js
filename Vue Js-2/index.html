@@ -18,11 +18,13 @@
         <button v-on:dblclick="add(10)">Add 10 Year</button>
         <button v-on:dblclick="subtract(10)">Subtract 10 Year</button>
         <p>{{university}}</p>
+        <input type="text" @keyup.enter="logName">
         <p>My age is {{age}}</p>
         <div id="canvas" v-on:mousemove="updateXY">
             {{x}},
             {{y}}
         </div>
+        <a @click.prevent="click()" href="https://www.youtube.com">Youtube</a>
     </div>
 
     <script src="app.js"></script>
