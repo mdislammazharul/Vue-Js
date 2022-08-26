@@ -24,5 +24,8 @@ new Vue({
                 price: 0.0
             })
         },
+        removeItem(index) {
+            this.items.splice(index, 1)
+        }
     }
 })
