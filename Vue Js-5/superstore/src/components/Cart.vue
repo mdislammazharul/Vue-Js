@@ -7,6 +7,7 @@
         <hr>
         <li v-for="(item, index) in items" :key="index" class="list-group-item">
             <span class="item-name">{{  item.title  }}</span>
+            <button class="btn btn-sm btn-danger" @click="removeItem(index)">Delete</button>
             <span class="item-price float-right">{{  item.price  }}</span>
         </li>
         <hr>
@@ -30,6 +31,11 @@ export default {
             })
             return total
 
+        }
+    },
+    methods: {
+        removeItem(index) {
+            this.$emit('itemRemoved', index)
         }
     }
 }
