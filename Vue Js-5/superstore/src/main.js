@@ -10,9 +10,25 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 Vue.config.productionTip = false
 
+import VueRouter from 'vue-router'
+// import * as VueRouter from 'vue-router';
+
+Vue.use(VueRouter)
+
+// import { createRouter, createWebHistory } from 'vue-router'
+
+import { routes } from './Router/index'
+
+const router = new VueRouter({
+  routes
+})
+
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   components: { App },
   template: '<App/>'
 })
