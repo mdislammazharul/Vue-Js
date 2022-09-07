@@ -1,7 +1,15 @@
 <template lang="">
-    <div>
-     <h1>{{item}}</h1>
+    <div v-if="item" class="row">
+        <div class="col-sm-6">
+            <img :src="item.photo" alt="Photo">
+        </div>
+        <div class="col-sm-6">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.description }}</p>
+            <h6>{{ item.price }}</h6>
+        </div>       
     </div>
+    <h3 v-else>Loading...</h3>
 </template>
 <script>
 import axios from 'axios'
