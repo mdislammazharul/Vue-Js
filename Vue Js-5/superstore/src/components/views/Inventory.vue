@@ -22,7 +22,11 @@ export default {
     data() {
         return {
             loading: true,
-            items: []
+        }
+    },
+    computed: {
+        items() {
+            return this.$store.getters.getInventory
         }
     },
     mounted() {
@@ -30,13 +34,14 @@ export default {
     },
     methods: {
         addToCart(item) {
-            this.$emit('newItemAdded', item)
-            // console.log(item)
+            console.log(item)
+            this.$store.dispatch('addToCart', item)
+            // console.log(this.$store.state.item)
         },
         fetchInventory() {
             var self = this
             axios.get('http://localhost:3000/items').then(response => {
-                self.items = response.data
+                self.$store.commit('setInventory', response.data)
                 self.loading = false
             })
         }
@@ -46,4 +51,5 @@ export default {
 </script>
 
 <style>
+
 </style>

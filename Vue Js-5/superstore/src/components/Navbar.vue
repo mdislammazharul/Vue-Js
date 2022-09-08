@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <router-l class="navbar-brand" :to="{ path:'/' }"></router-l>
+        <router-link class="navbar-brand" :to="{ path:'/' }"></router-link>
         <a class="navbar-brand" href="#">Super Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,8 +27,9 @@ export default {
     },
     methods: {
         search() {
+            var self = this
             axios.get('http://localhost:3000/search/' + this.keyword).then(response => {
-                console.log(response.data)
+                self.$store.commit('setInventory', response.data)
             })
         }
     }
