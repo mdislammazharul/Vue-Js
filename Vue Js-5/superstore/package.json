@@ -15,7 +15,8 @@
     "jquery": "^3.6.1",
     "popper.js": "^1.16.1",
     "vue": "^2.5.2",
-    "vue-router": "3"
+    "vue-router": "3",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
