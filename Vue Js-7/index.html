@@ -14,7 +14,12 @@
 
         <button v-on:click="age++">Increase Age</button>
         <button v-on:click="age--">Increase Age</button>
-        <div @click="changeTitle('Oathbringer')">Title is Changing</div>
+        <div v-if="change">
+            <div @click="changeTitle('Kafka on the Shore')">
+                <p>Title is Changing</p>
+            </div>
+        </div>
+        <button @click="changeBook">Change Book</button>
     </div>
     <script src="app.js"></script>
 </body>

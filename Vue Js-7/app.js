@@ -3,13 +3,16 @@ const app = Vue.createApp ({
         return {
             title: 'The Final Empire',
             author: 'Brandon Sadnderson',
-            age: 45
+            age: 45,
+            change: false
         }
     },
     methods: {
         changeTitle(title) {
-            //this.title = 'Words of Randiance'
             this.title = title
+        },
+        changeBook() {
+            this.change = true
         }
     }
 })
